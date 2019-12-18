@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<ul class=" container list-group">
+  <li class="list-group-item"><strong>Nome:</strong> <%= @service.corte %></li>
+  <li class="list-group-item"><strong>Sobrenome:</strong> <%= @service.descricao %></li>
+  <li class="list-group-item"><strong>Cpf:</strong> <%= @service.preco %></li>
+</ul>
+<p></p>
+<p></p>
+<div class="text-center">
+<%= link_to 'Edit', edit_service_path(@service), class:'btn btn-success' %> 
+<%= link_to 'Back', services_path, class:'btn btn-primary' %>
+<div>
+

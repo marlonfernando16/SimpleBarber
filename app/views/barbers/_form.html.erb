@@ -1,0 +1,48 @@
+<%= form_with(model: barber, local: true) do |form| %>
+  <% if barber.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(barber.errors.count, "error") %> prohibited this barber from being saved:</h2>
+
+      <ul>
+      <% barber.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+    <div class="field form-group">
+      <%= form.label :nome %>
+      <%= form.text_field :nome, :required => true, class:'form-control' %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :sobrenome %>
+      <%= form.text_field :sobrenome, :required => true, class:'form-control' %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :cpf %>
+      <%= form.date_field :cpf, :required => true, class:'form-control' %>
+    </div>
+
+    <div class="field form-group">
+    <%= form.label :data_nascimento %>
+    <%= form.date_field :data_nascimento,:required => true, class:'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :telefone %>
+      <%= form.text_field :telefone, :required => true, class:'form-control' %>
+    </div>
+  </div>
+<br>
+<br>
+  <div class="actions text-center">
+    <%= form.submit 'Salvar', class:'btn btn-success' %>
+    <%= link_to 'Voltar', barbers_path, class:'btn btn-secondary' %>
+  </div>
+</div>
+
+<% end %>

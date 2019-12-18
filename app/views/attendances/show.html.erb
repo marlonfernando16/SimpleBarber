@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<ul class=" container list-group">
+  <li class="list-group-item"><strong>Total:</strong> <%= @attendance.total %></li>
+  <li class="list-group-item"><strong>Status:</strong> <%= @attendance.status %></li>
+  <li class="list-group-item"><strong>Tipo de Pagamento:</strong> <%= @attendance.cartao %></li>
+  <li class="list-group-item"><strong>Cliente:</strong> <%= @attendance.customer.nome %></li>
+  <li class="list-group-item"><strong>Barbeiro:</strong> <%= @attendance.barber.nome %></li>
+</ul>
+<p></p>
+<p></p>
+<div class="text-center">
+<%= link_to 'Edit', edit_attendance_path(@attendance), class:'btn btn-success' %> 
+<%= link_to 'Back', attendances_path, class:'btn btn-primary' %>
+<div>

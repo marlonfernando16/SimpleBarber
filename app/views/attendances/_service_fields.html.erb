@@ -1,0 +1,10 @@
+<div class="nested-fields">
+
+    <div class="field preco-service">
+        <%= f.label :service_id %>
+        <%= collection_select(:attendance, :service_ids, Service.all, :id, :corte_and_preco, {prompt: 'Escolha uma opção'}, {required: 'true', class: 'form-control '}) %>
+   </div>
+
+        <%= link_to_remove_association('Remover', f) %>
+    </div>
+</div>    

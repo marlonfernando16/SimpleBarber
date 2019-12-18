@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<ul class=" container list-group">
+  <li class="list-group-item"><strong>Total:</strong> <%= @barber.nome %></li>
+  <li class="list-group-item"><strong>Status:</strong> <%= @barber.sobrenome %></li>
+  <li class="list-group-item"><strong>Tipo de Pagamento:</strong> <%= @barber.cpf %></li>
+  <li class="list-group-item"><strong>Cliente:</strong> <%= @barber.data_nascimento %></li>
+  <li class="list-group-item"><strong>Barbeiro:</strong> <%= @barber.telefone %></li>
+</ul>
+<p></p>
+<p></p>
+<div class="text-center">
+<%= link_to 'Edit', edit_barber_path(@barber), class:'btn btn-success' %> 
+<%= link_to 'Back', barbers_path, class:'btn btn-primary' %>
+<div>

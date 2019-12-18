@@ -1,0 +1,36 @@
+<%= form_with(model: service, local: true) do |form| %>
+  <% if service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="container">
+  <div class="field form-group">
+    <%= form.label :corte %>
+    <%= form.text_field :corte, :required => true, class:'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao, :required => true, class:'form-control'%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :preco %>
+    <%= form.text_field :preco ,:required => true, class:'form-control'%>
+  </div>
+
+  <div class="actions text-center">
+  <%= form.submit 'Salvar', class:'btn btn-success' %>
+  <%= link_to 'Voltar', services_path, class:'btn btn-secondary' %>
+</div>
+
+</div>  
+<% end %>

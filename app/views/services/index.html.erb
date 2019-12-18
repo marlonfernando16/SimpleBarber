@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<br>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Corte</th>
+        <th>Descricao</th>
+        <th>Preco</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @services.each do |service| %>
+        <tr>
+          <td><%= service.corte %></td>
+          <td><%= service.descricao %></td>
+          <td><%= service.preco %></td>
+          <td><%= link_to 'Show', service, class:'btn btn-info' %></td>
+          <td><%= link_to 'Edit', edit_service_path(service), class:'btn btn-warning' %></td>
+          <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div> 
+<br>
+<div class="text-center">
+  <%= link_to 'New Service', new_service_path, class:'btn btn-primary' %>
+</div>

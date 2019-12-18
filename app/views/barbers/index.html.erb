@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<br>
+<div class="container">
+  <table class="table">
+  
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Cpf</th>
+        <th>Data nascimento</th>
+        <th>Telefone</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @barbers.each do |barber| %>
+        <tr>
+          <td><%= barber.nome %></td>
+          <td><%= barber.sobrenome %></td>
+          <td><%= barber.cpf %></td>
+          <td><%= barber.data_nascimento %></td>
+          <td><%= barber.telefone %></td>
+          <td><%= link_to 'Show', barber, class:'btn btn-info' %></td>
+          <td><%= link_to 'Edit', edit_barber_path(barber), class:'btn btn-warning' %></td>
+          <td><%= link_to 'Destroy', barber, method: :delete, data: { confirm: 'Are you sure?'}, class:'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+<div class="text-center">
+  <%= link_to 'New Barber', new_barber_path, class:'btn btn-primary' %>
+</div>

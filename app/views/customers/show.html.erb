@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<ul class=" container list-group">
+  <li class="list-group-item"><strong>Nome:</strong> <%= @customer.nome %></li>
+  <li class="list-group-item"><strong>Sobrenome:</strong> <%= @customer.sobrenome %></li>
+  <li class="list-group-item"><strong>Cpf:</strong> <%= @customer.cpf %></li>
+  <li class="list-group-item"><strong>Data de nascimento:</strong> <%= @customer.data_nascimento %></li>
+  <li class="list-group-item"><strong>Telefone:</strong> <%= @customer.telefone %></li>
+  <li class="list-group-item"><strong>Cortes:</strong> <%= @customer.attendances.count %></li>
+</ul>
+<p></p>
+<p></p>
+<div class="text-center">
+<%= link_to 'Edit', edit_customer_path(@customer), class:'btn btn-success' %> 
+<%= link_to 'Back', customers_path, class:'btn btn-primary' %>
+<div>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<br>
+<div class="container">
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Total</th>
+      <th>Status</th>
+      <th>Cartao</th>
+      <th>Customer</th>
+      <th>Barber</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attendances.each do |attendance| %>
+      <tr>
+        <td><%= attendance.total %></td>
+        <td><%= attendance.status %></td>
+        <td><%= attendance.cartao %></td>
+        <td><%= attendance.customer.nome %></td>
+        <td><%= attendance.barber.nome %></td>
+        <td><%= link_to 'Show', attendance, class:'btn btn-info' %></td>
+        <td><%= link_to 'Edit', edit_attendance_path(attendance), class:'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+<div class="text-center">
+<%= link_to 'Novo Atendimento', new_attendance_path, class:'btn btn-primary' %>
+</div>

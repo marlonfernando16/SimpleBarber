@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SimpleBarber</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand text-white" href="<%= home_index_path %>"><h1>SimpleBarber</h1></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav justify-content-between h5 ">
+      <a class="active nav-item nav-link text-white" id="menu-home" href="<%= home_index_path %>">Home</a>
+      <a class="nav-item nav-link teste text-white" id="menu-cursos" href="<%= customers_path %>">Clientes</a>
+      <a class="nav-item nav-link text-white" id="menu-inscricoes" href="<%= barbers_path %>">Barbeiros</a>
+      <a class="nav-item nav-link text-white" id="menu-inscricoes" href="<%= attendances_path %>">Atendimentos</a>
+      <a class="nav-item nav-link text-white" id="menu-inscricoes" href="<%= services_path %>">Serviços</a>
+
+    </div>
+  </div>
+</nav>
+    <%= yield %>
+  </body>
+
+  <script>
+      var current = location.pathname.split('/')[1];
+      $('.nav-item').each(function(){
+        var $this = $(this);
+        // if the current path is like this link, make it active
+        if($this.attr('href').indexOf(current) !== -1){
+            $this.addClass('active text-danger');
+          }else
+          $this.removeClass('active text-danger');
+      })
+  </script>
+</html>

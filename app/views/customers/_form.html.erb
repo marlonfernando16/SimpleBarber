@@ -1,0 +1,45 @@
+<%= form_with(model: customer, local: true) do |form| %>
+  <% if customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% customer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+       
+  <div class='container'>
+  <div class="field form-group">
+    <%= form.label :nome %>
+    <%= form.text_field :nome ,:required => true,class:'form-control'%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :sobrenome %>
+    <%= form.text_field :sobrenome ,:required => true, class:'form-control'%>
+  </div>
+  
+  <div class="field form-group">
+    <%= form.label :cpf %>
+    <%= form.text_field :cpf ,:required => true, class:'form-control'%>
+  </div>
+  
+  <div class="field form-group">
+    <%= form.label :data_nascimento %>
+    <%= form.date_field :data_nascimento,:required => true, class:'form-control' %>
+    </div>
+  
+    <div class="field form-group">
+    <%= form.label :telefone %>
+    <%= form.text_field :telefone, :required => true, class:'form-control' %>
+    </div>
+
+<div class="actions text-center">
+      <%= form.submit 'Salvar', class:'btn btn-success' %>
+      <%= link_to 'Voltar', customers_path, class:'btn btn-secondary' %>
+  </div>
+  </div>
+<% end %>

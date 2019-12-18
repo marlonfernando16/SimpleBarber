@@ -1,0 +1,61 @@
+<%= form_with(model: attendance, local: true) do |form| %>
+  <% if attendance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
+
+      <ul>
+      <% attendance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+       
+  <div class='container'>
+  <div class="field form-group">
+    <%= form.label :status %>
+    <%= form.select :status, options_for_select(["Finalizado", "Em andamento"]),{prompt: 'Escolha uma opção'}, {required: 'true', class: 'form-control'} %>
+  </div>
+  
+  <%= form.hidden_field :total, :id => "total", value: 0 %>
+
+  <div class="field">
+    <%= form.label :cartao, 'Tipo de Pagamento' %>
+    <%= form.select :cartao, options_for_select(["Crédito", "Débito", "Dinheiro"]),{prompt: 'Escolha uma opção'}, {required: 'true', class: 'form-control'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= collection_select(:attendance, :customer_id, Customer.all, :id, :nome,{prompt: 'Escolha uma opção'}, {required: 'true', class: 'form-control '}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :barber_id %>
+    <%= collection_select(:attendance, :barber_id, Barber.all, :id, :nome, {prompt: 'Escolha uma opção'}, {required: 'true', class: 'form-control '}) %>
+  </div>
+  <br>
+  <div id="services">
+    <%= form.fields_for :services do |services_fields| %>
+    <%= render partial: "service_fields", locals: {f: services_fields } %>
+    <% end %>   
+    
+    <%= link_to_add_association('[Novo Servico]', form, :services, class:'click-value-update') %>
+</div>
+        
+<div class="actions text-center">
+      <%= form.submit 'Salvar', class:'btn btn-success' %>
+      <%= link_to 'Voltar', attendances_path, class:'btn btn-secondary' %>
+    </div>
+  </div>
+<% end %>
+
+<script>
+  $( "form[action='/attendances']").submit(function( event ) {
+      var total = 0
+      $('.preco-service select:nth-child(2) option:selected').each(function(){
+        total+= parseFloat($(this).text().match(/\d.+/g).join(''))
+      })
+      $('#total').val(total)
+  });
+  console.log(total)
+</script>
