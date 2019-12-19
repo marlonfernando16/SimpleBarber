@@ -1,0 +1,6 @@
+[2019-12-19 13:27:23.608] [main] [info] update#setState idle
+[2019-12-19 13:27:53.611] [main] [info] update#setState checking for updates
+[2019-12-19 13:27:53.613] [main] [info] update#setState idle
+[2019-12-19 13:39:06.036] [main] [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?)). Details: Keys: extensionsAssistant/recommendations Length: 355
+[2019-12-19 14:27:53.643] [main] [info] update#setState checking for updates
+[2019-12-19 14:27:53.645] [main] [info] update#setState idle
