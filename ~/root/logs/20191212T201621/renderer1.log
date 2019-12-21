@@ -1,2 +1,0 @@
-[2019-12-12 20:16:34.740] [renderer1] [error] Unable to read file (Error: File not found (/home/marlon/IFPB/p6/ruby/rails/SimpleBarber-Rails/app/models/barber.rb)): Error: Unable to read file (Error: File not found (/home/marlon/IFPB/p6/ruby/rails/SimpleBarber-Rails/app/models/barber.rb))
-    at _.doReadAsFileStream (file:///snap/code/22/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1591:434)

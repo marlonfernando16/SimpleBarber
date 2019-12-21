@@ -4,3 +4,9 @@
 [2019-12-19 13:39:06.036] [main] [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?)). Details: Keys: extensionsAssistant/recommendations Length: 355
 [2019-12-19 14:27:53.643] [main] [info] update#setState checking for updates
 [2019-12-19 14:27:53.645] [main] [info] update#setState idle
+[2019-12-19 15:27:53.671] [main] [info] update#setState checking for updates
+[2019-12-19 15:27:53.674] [main] [info] update#setState idle
+[2019-12-19 16:07:22.477] [main] [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?)). Details: Keys: workbench.grid.width Length: 4
+[2019-12-19 16:27:53.675] [main] [info] update#setState checking for updates
+[2019-12-19 16:27:53.676] [main] [info] update#setState idle
+[2019-12-19 16:44:22.088] [main] [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?),(?,?),(?,?)). Details: Keys: workbench.sidebar.size, workbench.panel.size, workbench.grid.width Length: 10
